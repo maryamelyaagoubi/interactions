@@ -1,0 +1,501 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.35cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{microtype}
+
+\setstretch{1.08}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black}
+
+\title{\textbf{L'ammoniac industriel}\\
+\large Procédé, usines, coûts, structures de marché, commerce physique et benchmarks de prix}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Portée}
+
+Ce document ne traite pas encore de couverture. Il traite de l'objet à couvrir.
+
+L'ammoniac n'est pas un simple dérivé du prix du gaz. C'est un produit de base de la chimie azotée, fabriqué dans des unités continues, énergivores, capitalistiques, fortement contraintes par la disponibilité du feedstock, la fiabilité des trains, la logistique portuaire et le cadre carbone. Tant que cette réalité physique n'est pas posée proprement, toute analyse de prix reste superficielle.
+
+Le point de départ est simple. Une tonne d'ammoniac est une tonne d'azote fixée. Le procédé industriel consiste à prendre l'azote de l'air, à produire de l'hydrogène, puis à faire réagir les deux sous pression et température élevées dans une boucle de synthèse. Le fait chimique fondamental est la très grande stabilité de la molécule d'azote. La liaison triple covalente $\mathrm{N \equiv N}$ rend l'azote atmosphérique abondant mais peu réactif. Toute l'économie de l'ammoniac part de là: il faut dépenser de l'énergie pour casser cette inertie chimique.
+
+\section{La molécule et le bilan matière}
+
+La réaction globale est
+\[
+\mathrm{N_2 + 3H_2 \rightleftharpoons 2NH_3}.
+\]
+
+Le bilan stoechiométrique est élémentaire, mais il ne faut pas le négliger. Une mole d'ammoniac contient un atome d'azote et trois atomes d'hydrogène. Comme la masse molaire de $\mathrm{NH_3}$ vaut \(17\), dont \(14\) pour l'azote et \(3\) pour l'hydrogène, une tonne d'ammoniac contient environ
+\[
+\frac{14}{17} \approx 82.35\% \text{ d'azote}
+\qquad\text{et}\qquad
+\frac{3}{17} \approx 17.65\% \text{ d'hydrogène}.
+\]
+
+Autrement dit, une tonne d'ammoniac correspond approximativement à
+\[
+0.824 \text{ t d'azote} + 0.176 \text{ t d'hydrogène}.
+\]
+
+On remarque que:
+
+- La vraie difficulté économique n'est donc pas l'azote. Elle est du côté de l'hydrogène.
+
+- La décarbonation de l'ammoniac passe d'abord par la décarbonation de l'hydrogène.
+
+\section{Chaîne de fabrication}
+
+\subsection{Architecture générale}
+
+Une usine d'ammoniac moderne est un enchaînement de sous-unités. Le réacteur Haber--Bosch n'en est que le coeur. Le procédé complet comporte en général:
+
+\begin{enumerate}[leftmargin=1.6em]
+    \item la préparation du feedstock;
+    \item la production de gaz de synthèse riche en hydrogène;
+    \item l'apport d'azote;
+    \item l'élimination du CO et du CO\textsubscript{2};
+    \item la purification du mélange;
+    \item la boucle de synthèse;
+    \item la condensation, le stockage et l'expédition.
+\end{enumerate}
+
+Cette décomposition n'est pas seulement pédagogique. Chaque bloc correspond à des coûts, des risques d'arrêt, des métiers, des consommations d'utilités et des leviers d'efficacité distincts.
+
+\subsection{Préparation du gaz}
+
+Dans un schéma gazier, le premier bloc est la désulfuration. Les composés soufrés empoisonnent les catalyseurs en aval. On traite donc le gaz naturel pour retirer le soufre avant toute étape de reformage.
+
+Cette section est modeste en apparence, mais une désulfuration mal tenue dégrade la performance du reste de l'usine. Dans la vie réelle, une usine n'est pas une suite de réactions idéales; c'est une discipline de pureté, de température, de pression, de corrosion et d'encrassement.
+
+\subsection{Réformage primaire}
+
+La production d'hydrogène commence généralement par le reformage à la vapeur du méthane:
+\[
+\mathrm{CH_4 + H_2O \rightleftharpoons CO + 3H_2}.
+\]
+
+Cette réaction est endothermique. Il faut donc fournir de la chaleur. C'est l'une des raisons pour lesquelles le gaz intervient à la fois comme matière première chimique et comme source d'énergie.
+
+Le reformeur primaire est une unité lourde. Il impose une instrumentation précise, une surveillance des températures tube par tube, un contrôle serré du rapport vapeur-carbone, et une maîtrise constante des risques de cokéfaction et de fatigue thermique.
+
+\subsection{Réformage secondaire et apport d'azote}
+
+L'air est injecté en réformage secondaire. Il apporte l'oxygène nécessaire pour compléter certaines conversions et, surtout, il apporte l'azote qui devra ensuite se retrouver dans le mélange de synthèse dans un rapport proche du rapport stoechiométrique utile à la production d'ammoniac.
+
+C'est un point important. L'azote n'est pas, dans l'usine classique, une matière achetée. Il est capté sur site via l'air du procédé. Le feedstock monétisé est ailleurs.
+
+\subsection{Conversion eau-gaz}
+
+Le monoxyde de carbone formé en amont est converti selon
+\[
+\mathrm{CO + H_2O \rightleftharpoons CO_2 + H_2}.
+\]
+
+Cette étape augmente la quantité d'hydrogène et convertit le CO en CO\textsubscript{2}, plus facile à séparer. L'économie du procédé est ici claire: on déplace le carbone dans une forme que l'on sait mieux retirer, tout en améliorant le rendement hydrogène.
+
+\subsection{Élimination du CO\textsubscript{2}}
+
+Le CO\textsubscript{2} est extrait par lavage chimique ou physique selon la technologie du site. Historiquement, cette étape était surtout un impératif de pureté du gaz de synthèse. Elle devient aussi un lieu de contrainte carbone et, pour les projets dits \emph{blue ammonia}, un point d'intégration avec captage, compression, transport et stockage du CO\textsubscript{2}.
+
+Économiquement, cette étape est double. Elle est un coût en exploitation, mais aussi un point de séparation entre:
+\begin{itemize}[leftmargin=1.6em]
+    \item l'ammoniac conventionnel;
+    \item l'ammoniac à plus faible intensité carbone;
+    \item et, potentiellement, des schémas de valorisation du CO\textsubscript{2} en aval, notamment vers l'urée.
+\end{itemize}
+
+\subsection{Méthanation et purification finale}
+
+Les traces résiduelles de CO et de CO\textsubscript{2}, nuisibles à la catalyse de synthèse ammoniacale, sont converties à l'état de méthane. Cette étape de polissage chimique paraît secondaire; elle est en réalité indispensable à la longévité du catalyseur de synthèse.
+
+\subsection{Boucle de synthèse Haber--Bosch}
+
+Le mélange \(\mathrm{N_2/H_2}\) purifié entre dans la boucle de synthèse. La réaction est exothermique, mais limitée par l'équilibre. On travaille donc à pression élevée, avec catalyse, recyclage des gaz non convertis et séparation continue de l'ammoniac formé par condensation.
+
+Le réacteur seul ne décrit pas l'unité. Il faut penser en \emph{loop}: compression, échange thermique, réaction, refroidissement, condensation, séparation, recyclage, purge. La performance dépend du système entier.
+
+\subsection{Stockage et expédition}
+
+L'ammoniac est stocké soit sous pression, soit à basse température sous forme liquide. Cette dernière partie n'est pas logistique au sens banal. Elle est industrielle, réglementaire, sécuritaire. Les installations de stockage, les capacités portuaires, les bras de chargement, les règles de sécurité process et maritime font partie du coût économique réel de la tonne exportable.
+
+\section{Variantes technologiques}
+
+\subsection{Voie gaz naturel}
+
+C'est la voie dominante hors Chine. Son économie dépend du prix du gaz, de la qualité de l'actif, de la taille du train, du coût de l'énergie auxiliaire et du coût du carbone.
+
+\subsection{Voie charbon}
+
+La voie charbonnière reste structurante en Chine. Elle a historiquement permis à la Chine de produire à grande échelle en s'appuyant sur une ressource domestique disponible. Son principal défaut est son intensité carbone très élevée. Tant qu'il n'existe pas de prix du carbone crédible ou de contrainte frontière, cette voie peut rester compétitive localement. Dès qu'un coût carbone sérieux entre dans l'équation, sa position relative se dégrade.
+
+\subsection{Voie électrolytique}
+
+Dans l'ammoniac dit \emph{vert}, l'hydrogène ne vient plus du reformage du méthane mais de l'électrolyse de l'eau. Le centre de gravité économique se déplace alors du gaz vers l'électricité, le facteur de charge, le coût du capital et la flexibilité du système.
+
+\subsection{Voie gaz avec captage}
+
+Dans l'ammoniac dit \emph{bleu}, le schéma de base reste fossile, mais la chaîne intègre un captage puis un stockage géologique ou une autre forme de gestion durable du CO\textsubscript{2}. Le sujet n'est pas seulement technique. Il devient comptable, réglementaire et commercial: quels volumes sont captés, selon quelle frontière de système, avec quelle certification, selon quel standard d'émissions?
+
+\section{L'usine comme organisation humaine}
+
+Les postes principaux se répartissent en quelques familles.
+
+\subsection{Conduite}
+
+Les opérateurs salle de contrôle et les opérateurs terrain pilotent l'unité en continu. Ils surveillent pressions, températures, débits, niveaux, analyseurs, vibrations, alarmes, états des compresseurs, charge des fours, stabilité de la boucle et qualité produit. Leur travail n'est pas l'exécution passive d'un procédé stable. C'est la gestion d'un système dynamique qui dérive, s'encrasse, fatigue, s'arrête, redémarre et se protège.
+
+\subsection{Procédé}
+
+Les ingénieurs procédé suivent les bilans matière-énergie, les rendements, les consommations spécifiques, les goulots, la dégradation des performances, les contraintes catalytiques, les revamps possibles et les arrêts. Ce sont eux qui transforment les données d'exploitation en décisions d'optimisation.
+
+\subsection{Maintenance}
+
+Mécanique, instrumentation, électricité, inspection, corrosion, rotating equipment, compresseurs, chaudières, tuyauterie, intégrité des appareils sous pression: toute la marge d'une usine peut être détruite par une mauvaise maintenance. Une usine théoriquement compétitive mais structurellement indisponible est une mauvaise usine.
+
+\subsection{Sécurité et intégrité}
+
+L'ammoniac est toxique. Le procédé met en jeu température, pression, gaz combustibles, appareils critiques et risques de rejet. Les équipes HSE, intégrité mécanique et sécurité des procédés ne sont pas une couche administrative. Elles font partie du fonctionnement économique normal de l'actif.
+
+\subsection{Laboratoire et qualité}
+
+Le laboratoire contrôle pureté, eau, contaminants, conformité produit, parfois analyses environnementales et eaux industrielles. Sans discipline analytique, la stabilité de conduite et la conformité commerciale se dégradent.
+
+\subsection{Chaîne d'approvisionnement et expédition}
+
+Feedstock, catalyseurs, pièces critiques, planification navires, stockage, chargement, documents qualité, interface portuaire: pour un producteur exportateur, la logistique n'est pas l'aval passif du procédé. Elle en est l'extension commerciale.
+
+\section{Structure des coûts}
+
+\subsection{Principe général}
+
+Le coût de l'ammoniac ne se réduit pas à une moyenne sectorielle. Il faut distinguer:
+\[
+\text{coût cash usine},
+\qquad
+\text{coût complet usine},
+\qquad
+\text{coût rendu marché}.
+\]
+
+Le premier compte pour la décision de marche ou d'arrêt de court terme. Le second compte pour la création de valeur de moyen terme. Le troisième compte pour le commerce.
+
+
+
+Pour une tonne d'ammoniac départ usine, on peut écrire
+\[
+C_{\mathrm{NH_3}}
+=
+C_{\mathrm{feedstock}}
++
+C_{\mathrm{fuel}}
++
+C_{\mathrm{power}}
++
+C_{\mathrm{eau\;et\;utilités}}
++
+C_{\mathrm{catalyseurs\;et\;chimie}}
++
+C_{\mathrm{maintenance}}
++
+C_{\mathrm{main\;d'oeuvre}}
++
+C_{\mathrm{overheads}}
++
+C_{\mathrm{carbone}}
++
+C_{\mathrm{arrêts\;et\;fiabilité}}.
+\]
+
+Pour une tonne rendue client importateur:
+\[
+C_{\mathrm{delivered}}
+=
+C_{\mathrm{NH_3}}
++
+C_{\mathrm{stockage}}
++
+C_{\mathrm{chargement}}
++
+C_{\mathrm{fret}}
++
+C_{\mathrm{assurance}}
++
+C_{\mathrm{déchargement}}
++
+C_{\mathrm{coût\;frontière}}
++
+C_{\mathrm{financement\;commercial}}.
+\]
+
+
+\section{Production mondiale}
+
+La production mondiale d'ammoniac était de l'ordre de \(186\) Mt en 2023. L'IFA estime qu'elle a progressé à \(189.8\) Mt en 2024. Le taux de croissance sur longue période est modéré. On n'est pas sur un marché en expansion explosive du côté des usages conventionnels; on est sur un marché lourd, mature, où les changements de structure viennent plus de la géographie du coût, du carbone et des nouveaux usages potentiels que d'une simple croissance linéaire de la demande.
+
+La structure géographique est, elle, très marquée. En 2023, les dix plus grands pays producteurs dans le handbook Yara étaient:
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Pays & Production 2023 (Mt) & Part du total mondial (\%) \\
+\midrule
+Chine & 57.0 & 30.6 \\
+Inde & 18.7 & 10.1 \\
+Russie & 17.1 & 9.2 \\
+États-Unis & 16.8 & 9.0 \\
+Indonésie & 7.1 & 3.8 \\
+Arabie saoudite & 6.5 & 3.5 \\
+Égypte & 5.4 & 2.9 \\
+Iran & 5.1 & 2.7 \\
+Canada & 4.7 & 2.5 \\
+Pakistan & 4.4 & 2.4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+La Chine pèse à elle seule un peu plus de \(30\%\) de la production mondiale. 
+
+Ensuite, les grands producteurs ne sont pas nécessairement les grands acteurs du commerce maritime.
+
+\section{Entreprises et capacité industrielle}
+
+Le marché de l'ammoniac est moins concentré au niveau entreprise qu'au niveau géographique. Il existe certes de grands groupes, mais le vrai pouvoir structurel vient souvent de la position sur la courbe mondiale de coût, de l'intégration aval, de l'accès portuaire et de la qualité des actifs.
+
+Quelques ordres de grandeur utiles:
+
+\begin{center}
+\begin{tabular}{p{3.1cm} p{3.2cm} p{8.2cm}}
+\toprule
+Entreprise & Ordre de grandeur & Lecture industrielle \\
+\midrule
+CF Industries & 10.4 Mt/an de capacité ammoniaque moyenne annoncée & Actif nord-américain, très exposé au coût du gaz mais bien placé dans la courbe de coût globale. \\
+Yara & 7.181 Mt d'ammoniac produites en 2024 & Profil intégré: production, transport, stockage, commerce et transformation. Le poids stratégique ne vient pas seulement du volume produit, mais aussi du rôle de négociant et d'opérateur logistique. \\
+Nutrien & activité azote très significative, 2.483 Mt d'ammoniac vendues en 2024 dans le segment publié & Profil intégré fertilisants. L'optimisation de mix entre ammoniaque et produits améliorés est centrale. \\
+Fertiglobe & 6.6 Mt de capacité combinée urea + ammonia marchande annoncée; premier exportateur maritime combiné urea + ammonia selon la société & Cas typique d'exportateur du Moyen-Orient / Afrique du Nord: feedstock compétitif, vocation export, proximité portuaire. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Il faut lire ce tableau avec prudence. Les comparaisons directes entreprise par entreprise sont imparfaites, car les périmètres publiés diffèrent: capacité brute, capacité nette, production, ventes, équivalent ammoniac, périmètres consolidés ou non.
+
+\section{Commerce physique}
+
+Le marché mondial visible ne porte que sur une faible fraction de la production totale.
+
+Le handbook Yara donne \(16.6\) Mt de commerce mondial en 2023, soit environ \(9\%\) de la production. Cela change complètement la manière de lire les prix. Sur un marché où \(91\%\) du volume est captif ou transformé en aval, le prix marchand est déterminé par une marge de volume relativement étroite.
+
+Les principaux exportateurs 2023 étaient, selon le même document, Trinidad, l'Arabie saoudite, l'Indonésie, les États-Unis, l'Algérie, le Canada, l'Égypte, l'Iran, le Qatar et la Russie. Les principaux importateurs étaient l'Inde, les États-Unis, le Maroc, la Corée du Sud, la Turquie, l'Allemagne, la Belgique, la Chine, la France et Taïwan.
+
+
+Les pays fortement gaziers et bien équipés portuairement alimentent le commerce.
+
+Les bassins déficitaires ou les industries aval consommatrices tirent l'importation.
+
+
+Le prix de l'ammoniac ne se lit pas à partir d'un coût moyen mondial. Il se lit à partir de la dernière tonne encore nécessaire pour équilibrer un bassin donné.
+
+Dans une lecture simple de courbe de coût, les producteurs les plus compétitifs servent le marché d'abord, puis les suivants, jusqu'à satisfaction de la demande. Le prix se fixe alors au niveau du coût du producteur marginal encore en activité.
+
+Dans l'ammoniac, il faut immédiatement corriger cette formulation. Ce qui compte n'est pas seulement le coût de production, mais le coût \emph{rendu}. Le bon objet est donc le coût de la tonne encore nécessaire, disponible au bon endroit, au bon moment, avec la bonne logistique.
+
+On peut l'écrire, 
+\[
+P_{\mathrm{bassin}}
+\approx
+C^{\mathrm{delivered}}_{\mathrm{source\;marginale}}.
+\]
+
+Cette écriture est plus juste qu'une référence à un coût moyen. Elle réintroduit ce qui structure réellement une commodité: hiérarchie des coûts, contraintes de capacité, logistique, géographie des flux.
+
+
+
+Dans une industrie de commodité, les actifs sont lourds, irréversibles, localisés. 
+Les acteurs ne raisonnent pas seulement en coût instantané. 
+Ils raisonnent aussi en taux d'utilisation, en discipline de marché, en guerre de prix, en préservation de marge, en risque d'entrée et en arbitrage géographique. \cite{tanguy}
+
+
+Ce point est important dans l'ammoniac parce que le marché visible est étroit relativement à la production totale. 
+Une grande partie des volumes est captive ou intégrée en aval. Le prix marchand se forme donc sur une fraction limitée de l'offre mondiale. 
+Dans un tel marché, la tonne marginale compte beaucoup, mais la structure concurrentielle compte aussi.
+
+\section{Prix physiques et benchmarks}
+
+\subsection{Nature des benchmarks}
+
+Les benchmarks de l'ammoniac sont construits à partir d'une observation de transactions, de contrats, de netbacks et de niveaux de marché plausibles pour des qualités, des lieux, des tailles de cargo et des fenêtres de chargement ou de livraison précises.
+
+Cela a trois conséquences.
+
+Le lieu compte.
+
+Le mode de cotation compte.
+
+Le prix embarque toujours une géographie.
+
+\subsection{Familles de cotations}
+
+Les deux bases les plus fréquentes sont:
+\begin{itemize}[leftmargin=1.6em]
+    \item \textbf{FOB} (\emph{free on board}): prix au chargement sur le port d'origine;
+    \item \textbf{CFR} (\emph{cost and freight}): prix rendu au port de destination, fret inclus, assurance non incluse.
+\end{itemize}
+
+Un prix FOB répond à la question: combien vaut la tonne au départ du bassin exportateur?
+
+Un prix CFR répond à la question: combien vaut la tonne à l'arrivée dans le bassin importateur, fret maritime inclus?
+
+La différence n'est pas un détail. C'est une différence de risque, de logistique et de structure économique.
+
+\subsection{CFR Tampa}
+
+Le benchmark CFR Tampa est historiquement l'un des pivots du marché ammoniac. Dans la documentation S\&P Global la plus récente, l'évaluation CFR Tampa reflète le prix contractuel mensuel entre Yara et Mosaic. Le lieu est Tampa, en Floride. La base est CFR. La taille de cargo standard retenue dans le guide est de \(25{,}000\) t.
+
+Ce benchmark est important non parce qu'il représenterait à lui seul tout le marché mondial, mais parce qu'il a longtemps servi de signal de marché très regardé pour le bassin Atlantique et au-delà.
+
+\subsection{FOB Middle East}
+
+Du côté exportateur, le \textbf{FOB Middle East} est une ancre majeure. Dans le guide S\&P, la cotation renvoie à Ras Al Khair, Arabie saoudite, hors Iran, pour \(25{,}000\) t, en base FOB. Chez Argus, la cotation \emph{Middle East fob ammonia} couvre plus largement les chargements depuis plusieurs pays du Golfe et tient compte des netbacks depuis les marchés importateurs majeurs.
+
+Le sens économique est net. Le Golfe n'est pas seulement une zone de production. C'est une zone de découverte de prix pour une part importante du marché export.
+
+\subsection{Europe du Nord-Ouest}
+
+Le \textbf{CFR NW Europe} existe en versions \emph{duty paid} et \emph{duty free}. Cette distinction est importante. Elle rappelle que le prix européen ne s'écrit pas seulement comme un prix mondial plus fret. Il s'écrit aussi avec un régime douanier, réglementaire et, de plus en plus, carbone.
+
+\subsection{Extrême-Orient et JKAP}
+
+S\&P publie aussi des évaluations CFR Far East, CFR Japon, CFR Taïwan, ainsi qu'un \emph{Japan Korea Ammonia Price} et un indice de substitution énergétique ammoniac pour le Japon. Cela signale la montée en importance des usages énergétiques potentiels et des primes régionales spécifiques en Asie du Nord-Est.
+
+\subsection{Formules de prix}
+
+Argus rappelle explicitement que de nombreux contrats sont formulaires et s'expriment comme:
+\[
+\text{prix contractuel} = \text{référence FOB Middle East} + \text{fret} + \text{ajustements}.
+\]
+
+Autrement dit, même quand la transaction finale est rendue importateur, l'ancre de valeur peut rester un prix export majeur auquel on ajoute le transport et les ajustements commerciaux.
+
+\section{Cadres nationaux de coût et de contrainte}
+
+\subsection{Union européenne}
+
+En Europe, il faut raisonner avec trois couches.
+
+La première est le prix du gaz, historiquement moins favorable que dans les bassins gaziers américains ou du Golfe.
+
+La deuxième est le coût du carbone. La documentation Yara rappelle que la production européenne d'ammoniac est exposée au coût ETS.
+
+La troisième est le CBAM. La Commission européenne indique que le régime définitif entre en vigueur en 2026, en parallèle de la réduction graduelle des allocations gratuites ETS. Le prix pertinent d'une tonne en Europe devient donc un prix \emph{gaz + logistique + carbone + conformité}.
+
+\subsection{États-Unis}
+
+Les États-Unis bénéficient d'un feedstock gazier structurellement compétitif. Cela explique la place de producteurs comme CF. Pour les projets bas-carbone, l'économie est en outre influencée par les incitations fédérales liées au captage de CO\textsubscript{2} et à l'hydrogène propre. Même sans entrer ici dans le détail fiscal, il faut retenir que le centre de gravité américain reste celui d'un bassin de coût favorable pour l'ammoniac gazier.
+
+\subsection{Trinidad}
+
+Trinidad est un cas important dans le commerce mondial parce que ses usines sont exportatrices et très visibles dans les flux atlantiques. Le point économique principal n'est pas un impôt spécifique spectaculaire, mais la disponibilité du gaz et les termes d'approvisionnement. Dans un bassin comme celui-ci, la sécurité du feedstock compte plus qu'une taxonomie abstraite de taxes.
+
+\subsection{Golfe et Afrique du Nord}
+
+Arabie saoudite, Qatar, Algérie, Égypte, Émirats: le sujet central est la combinaison de gaz compétitif, d'actifs exportateurs et d'accès maritime. Les écarts de coût tiennent moins à une formule universelle qu'aux conditions locales d'approvisionnement en gaz, aux régimes domestiques, au cadre des groupes publics ou semi-publics et à la qualité logistique.
+
+\subsection{Russie}
+
+La Russie reste un pays producteur important. Mais l'interprétation économique de ses coûts et de ses flux ne peut pas être séparée des sanctions, des contraintes logistiques, des redirections de commerce et des modifications des routes export.
+
+\subsection{Chine}
+
+La Chine domine le volume, mais une large partie de la production y est orientée vers le marché domestique et repose historiquement sur le charbon. Le coût chinois ne se lit donc pas comme un simple coût export marginal universel. Il faut distinguer production domestique, base énergétique, contraintes environnementales, politique industrielle et capacité effective à influencer le marché maritime.
+
+
+\section{Conclusion}
+
+L'ammoniac est un produit simple du point de vue de la formule brute et complexe du point de vue industriel.
+
+Simple, parce qu'il s'agit toujours de \(\mathrm{NH_3}\).
+
+Complexe, parce qu'entre l'air et le cargo il faut une usine continue, du feedstock, de la chaleur, de la compression, de la séparation, des catalyseurs, des opérateurs, des mainteneurs, des ports, des contrats et, de plus en plus, un cadre carbone.
+
+Le lecteur qui veut comprendre le marché doit donc tenir ensemble trois niveaux.
+
+Le niveau chimique: fixer l'azote exige de produire de l'hydrogène et de vaincre une inertie moléculaire réelle.
+
+Le niveau industriel: une usine d'ammoniac est une chaîne complète, pas un seul réacteur.
+
+Le niveau commercial: seule une faible part de la production entre dans le commerce mondial visible, et ce commerce est structuré par des benchmarks physiques localisés.
+
+\section*{Références}
+
+\begin{thebibliography}{9}
+
+\bibitem{ifa}
+International Fertilizer Association,
+\emph{Public Summary Short-Term Fertilizer Outlook 2024--2025}.
+\url{https://www.fertilizer.org/wp-content/uploads/2025/02/2024_ifa_short_term_outlook_report.pdf}
+
+\bibitem{yarahandbook}
+Yara,
+\emph{Fertilizer Industry Handbook 2025}.
+\url{https://www.yara.com/siteassets/investors/057-reports-and-presentations/other/2025/yara-fertilizer-industry-handbook-2025.pdf}
+
+\bibitem{cf}
+CF Industries,
+\emph{Annual Report 2023}.
+\url{https://www.cfindustries.com/globalassets/cf-industries/media/documents/reports/annual-reports/cf_industries_2023-annual-report.pdf}
+
+\bibitem{yarair}
+Yara,
+\emph{Integrated Report 2024}.
+\url{https://www.yara.com/siteassets/investors/057-reports-and-presentations/annual-reports/2024/yara-integrated-report-2024.pdf}
+
+\bibitem{nutrien}
+Nutrien,
+\emph{Fourth Quarter and Full-Year 2024 Results}.
+\url{https://www.nutrien.com/news/press-releases/nutrien-reports-fourth-quarter-and-full-year-2024-results-1717}
+
+\bibitem{fertiglobe}
+Fertiglobe,
+\emph{Q4 2024 Financial Results Press Release}.
+\url{https://fertiglobe.com/wp-content/uploads/2025/02/Fertiglobe-Q4-2024-Results-Press-Release-vF.pdf}
+
+\bibitem{platts}
+S\&P Global Commodity Insights,
+\emph{Specifications Guide: Global Fertilizers, January 2026}.
+\url{https://www.spglobal.com/content/dam/spglobal/ci/en/documents/platts/en/our-methodology/methodology-specifications/minerals-fertilizers/fertecon-specifications.pdf}
+
+\bibitem{argus}
+Argus Media,
+\emph{Argus Ammonia Methodology}.
+\url{https://www.argusmedia.com/-/media/Files/methodology/argus-ammonia.ashx}
+
+\bibitem{cbam}
+European Commission,
+\emph{Carbon Border Adjustment Mechanism}.
+\url{https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en}
+
+\bibitem{tanguy}
+Hervé Tanguy,
+\emph{Stratégie concurrentielle dans les industries de commodités},
+dossier \emph{Management : changer pour rester dans la course},
+\emph{La Jaune et la Rouge}, n\textsuperscript{o} 678, octobre 2012.
+
+\end{thebibliography}
+
+\end{document}
