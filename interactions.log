@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.6)  24 APR 2026 18:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.6)  28 APR 2026 11:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -919,14 +919,14 @@ Package pdftex.def Info: plots/stress_tail_odds_ratios__ammonia__gas_global__tt
 f_m1__ttf_q1.pdf  used on input line 660.
 (pdftex.def)             Requested size: 352.87039pt x 173.8499pt.
 <plots/two_axis_interaction_regimes__gas_global__ammonia__gas_global__ttf_m1__t
-tf_q1.pdf, id=754, 921.96306pt x 350.35454pt>
+tf_q1.pdf, id=754, 922.12088pt x 387.7045pt>
 File: plots/two_axis_interaction_regimes__gas_global__ammonia__gas_global__ttf_
 m1__ttf_q1.pdf Graphic file (type pdf)
 <use plots/two_axis_interaction_regimes__gas_global__ammonia__gas_global__ttf_m
 1__ttf_q1.pdf>
 Package pdftex.def Info: plots/two_axis_interaction_regimes__gas_global__ammoni
 a__gas_global__ttf_m1__ttf_q1.pdf  used on input line 670.
-(pdftex.def)             Requested size: 425.25583pt x 161.60341pt.
+(pdftex.def)             Requested size: 425.25583pt x 178.80176pt.
 
 
 [14 <./plots/focal_transmission_summary__ammonia__gas_global__ttf_m1__ttf_q1.pd
@@ -950,37 +950,37 @@ File: plots/scatter_binned_ttf_q1.pdf Graphic file (type pdf)
 Package pdftex.def Info: plots/scatter_binned_ttf_q1.pdf  used on input line 80
 4.
 (pdftex.def)             Requested size: 217.14941pt x 76.00453pt.
-<plots/scatter_binned_yara.pdf, id=981, 1001.21428pt x 350.29494pt>
+<plots/scatter_binned_yara.pdf, id=989, 1001.21428pt x 350.29494pt>
 File: plots/scatter_binned_yara.pdf Graphic file (type pdf)
 <use plots/scatter_binned_yara.pdf>
 Package pdftex.def Info: plots/scatter_binned_yara.pdf  used on input line 810.
 
 (pdftex.def)             Requested size: 217.14941pt x 75.97472pt.
-<plots/scatter_binned_orica.pdf, id=982, 1001.21428pt x 350.29494pt>
+<plots/scatter_binned_orica.pdf, id=990, 1001.21428pt x 350.29494pt>
 File: plots/scatter_binned_orica.pdf Graphic file (type pdf)
 <use plots/scatter_binned_orica.pdf>
 Package pdftex.def Info: plots/scatter_binned_orica.pdf  used on input line 820
 .
 (pdftex.def)             Requested size: 217.14941pt x 75.97472pt.
-<plots/scatter_binned_corn.pdf, id=983, 1001.21428pt x 350.29494pt>
+<plots/scatter_binned_corn.pdf, id=991, 1001.21428pt x 350.29494pt>
 File: plots/scatter_binned_corn.pdf Graphic file (type pdf)
 <use plots/scatter_binned_corn.pdf>
 Package pdftex.def Info: plots/scatter_binned_corn.pdf  used on input line 826.
 
 (pdftex.def)             Requested size: 217.14941pt x 75.97472pt.
-<plots/scatter_binned_wheat.pdf, id=984, 999.86684pt x 350.29494pt>
+<plots/scatter_binned_wheat.pdf, id=992, 999.86684pt x 350.29494pt>
 File: plots/scatter_binned_wheat.pdf Graphic file (type pdf)
 <use plots/scatter_binned_wheat.pdf>
 Package pdftex.def Info: plots/scatter_binned_wheat.pdf  used on input line 836
 .
 (pdftex.def)             Requested size: 217.14941pt x 76.07628pt.
-<plots/scatter_binned_soybeans.pdf, id=985, 1000.58437pt x 350.29494pt>
+<plots/scatter_binned_soybeans.pdf, id=993, 1000.58437pt x 350.29494pt>
 File: plots/scatter_binned_soybeans.pdf Graphic file (type pdf)
 <use plots/scatter_binned_soybeans.pdf>
 Package pdftex.def Info: plots/scatter_binned_soybeans.pdf  used on input line 
 842.
 (pdftex.def)             Requested size: 217.14941pt x 76.01749pt.
-<plots/scatter_binned_rice.pdf, id=986, 1001.21428pt x 350.29494pt>
+<plots/scatter_binned_rice.pdf, id=994, 1001.21428pt x 350.29494pt>
 File: plots/scatter_binned_rice.pdf Graphic file (type pdf)
 <use plots/scatter_binned_rice.pdf>
 Package pdftex.def Info: plots/scatter_binned_rice.pdf  used on input line 850.
@@ -1030,10 +1030,10 @@ t/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/ty
 pe1/public/lm/lmtti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb>
-Output written on interactions.pdf (20 pages, 778244 bytes).
+Output written on interactions.pdf (20 pages, 781234 bytes).
 PDF statistics:
- 1349 PDF objects out of 1440 (max. 8388607)
- 482 compressed objects within 5 object streams
+ 1357 PDF objects out of 1440 (max. 8388607)
+ 486 compressed objects within 5 object streams
  81 named destinations out of 1000 (max. 500000)
  64885 words of extra memory for PDF output out of 74296 (max. 10000000)
 
