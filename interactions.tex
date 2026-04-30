@@ -123,7 +123,7 @@
 \begin{abstract}
 Ammonia is often linked to natural gas through the cost of hydrogen production. That statement is correct, but incomplete. The traded ammonia price is a physical benchmark price shaped by feedstock costs, production technology, delivered logistics, regional balance, downstream fertilizer demand, and the marginal source required to clear a basin. This paper treats ammonia not as an isolated price series, but as the observable outcome of an interacting commodity system.
 
-The central claim is that ammonia cross-hedging is first an interaction-identification problem, and only then a hedge-ratio estimation problem. The paper translates objects from the interactions course into commodity-market diagnostics: multiscalar trajectories become multihorizon transmission curves; focal distance becomes focal transmission horizon; stress co-occurrence is measured through an odds ratio; and regimes are defined by two observable axes, proxy stress and transmission strength. These objects are then used to test whether gas-linked instruments are defensible proxies for ammonia. The empirical analysis supports a differentiated reading: \texttt{gas\_global} behaves mainly as a cost-regime proxy, while \texttt{ttf\_m1} is the more credible short-horizon prospective signal. Neither should be read as a complete hedge. Both should be used only after the interaction structure has been identified.
+The central claim is that ammonia cross-hedging is first an interaction-identification problem, and only then a hedge-ratio estimation problem. The paper translates objects from the interactions course into commodity-market diagnostics: multiscalar trajectories become multihorizon transmission curves; focal distance becomes focal transmission horizon; stress co-occurrence is measured through an odds ratio; and regimes are defined by two observable axes, proxy stress and transmission strength. These objects are then used to test whether gas-linked instruments are defensible proxies for ammonia. The empirical analysis supports a differentiated reading: \texttt{gas\_global} behaves mainly as a cost-regime proxy, while \texttt{ttf\_m1}, being a benchmark for european gas prices, is the more credible short-horizon prospective signal. Neither should be read as a complete hedge. Both should be used only after the interaction structure has been identified.
 \end{abstract}
 
 \clearpage
@@ -134,17 +134,18 @@ The central claim is that ammonia cross-hedging is first an interaction-identifi
 
 \section{Introduction}
 
-The practical problem is simple to state. An industrial buyer is exposed to ammonia prices and would like to reduce that risk. The difficulty is that ammonia does not have a clean, liquid, standard futures market comparable to the markets used to hedge crude oil, gas, power, or major agricultural commodities. The immediate temptation is therefore to use natural gas as a cross-hedge.
+The practical problem is simple to state. An industrial buyer is exposed to ammonia prices and would like to reduce that risk. The difficulty is that ammonia does not have a clean, liquid, standard futures market comparable to the markets used to hedge crude oil, gas, power, or major agricultural commodities. The immediate temptation is therefore to use natural gas as a cross-hedge. Here, a market is said to be liquid when it allows participants to buy or sell large quantities quickly, at low transaction cost, and without significantly impacting the price; in practice, this is typically associated with high trading volumes, tight bid-ask spreads, and continuous price discovery. A cross-hedge refers to the use of a different but related asset to hedge a given exposure when no direct hedging instrument exists; in this case, natural gas is used because its price is economically linked to ammonia production, even though the two assets are not identical.
 
 That temptation is economically justified. Conventional ammonia production requires hydrogen, and the dominant route outside coal-based systems uses natural gas both as feedstock and as energy input. But the conclusion does not follow mechanically. Ammonia is not a deterministic transformation of gas. It is a physical commodity whose price is formed through plants, ports, contracts, benchmarks, freight, regional balances, marginal producers, and downstream fertilizer arbitrages.
 
+
 The statistical question is therefore not merely
 \[
-\text{``Is ammonia correlated with gas?''}
+\textbf{``Is ammonia correlated with gas?''}
 \]
 It is sharper:
 \[
-\text{``Which observable markets interact with ammonia, at which horizon, in which states, and in which tail?''}
+\textbf{``Which observable markets interact with ammonia, at which horizon, in which states, and in which tail?''}
 \]
 
 That distinction matters. A proxy can be economically natural and statistically weak. A market can explain ammonia contemporaneously without leading it. A volatile gas market can fail to transmit into ammonia. Conversely, a weak average correlation may hide a useful stress interaction in the upper tail. Cross-hedging begins only after those cases have been separated.
@@ -362,11 +363,7 @@ This motivates the interaction diagnostics below.
 
 \subsection{Prices and returns}
 
-Let
-\[
-A_t
-\]
-be the ammonia price at date \(t\). Let
+Let $A_t$ be the ammonia price at date \(t\). Let
 \[
 X^j_t,\qquad j=1,\ldots,d,
 \]
@@ -388,6 +385,8 @@ The candidate universe is denoted
 \]
 
 The use of returns is not cosmetic. Candidate series have different units, levels, currencies and scaling conventions. Returns put the question in terms of co-movement of price changes.
+
+Moreover,\[\Delta \log A_t = \log A_t - \log A_{t-1},\qquad\Delta \log X^j_t = \log X^j_t - \log X^j_{t-1},\]so that log-returns correspond to one-period log-increments. They are preferred because they are additive over time,\[\sum_{s=1}^t \Delta \log A_s = \log A_t - \log A_0,\]dimensionless and comparable across assets, and typically closer to stationarity than price levels, which stabilizes statistical analysis (e.g.\ correlations or regressions).
 
 \subsection{Multihorizon transmission}
 
@@ -457,7 +456,7 @@ U^j_t
 =
 \1_{\{r^j_{t-k_j^\star}>q_{0.95}(r^j)\}} .
 \]
-The stress odds ratio is
+Let's also define : 
 \[
 I_j
 =
@@ -469,13 +468,19 @@ I_j
 \Prob(U^A_t=0,U^j_t=1)
 }.
 \]
-If \(I_j>1\), proxy spikes and ammonia spikes co-occur more often than independence would suggest. The count of joint spike observations must always be reported, because tail objects are sample-sensitive.
 
+This quantity is the classical \emph{odds ratio} associated with the $2 \times 2$ contingency table of $(U^A_t, U^j_t)$. It measures the strength of dependence between ammonia stress events and proxy stress events. Under independence, one has
+\[
+\mathbb{P}(U^A_t = a, U^j_t = b) = \mathbb{P}(U^A_t = a)\,\mathbb{P}(U^j_t = b),
+\]
+which implies $I_j = 1$. Therefore, $I_j > 1$ indicates positive tail dependence (co-occurrence of extreme events more frequent than under independence), while $I_j < 1$ indicates negative association.
+
+Here, if $I_j > 1$, proxy spikes and ammonia spikes co-occur more often than independence would suggest. The count of joint spike observations must always be reported, because tail objects are sample-sensitive.
 \subsection{Two-axis interaction regimes}
 
 A volatile proxy is not automatically useful. The regime diagnostic separates proxy stress from transmitted stress.
 
-Define proxy stress by
+For a given window size $W$, define proxy stress by
 \[
 \sigma^j_t
 =
@@ -527,6 +532,8 @@ Equities & Yara, Orica & corporate exposure to fertilizers, chemicals, gas, geog
 \bottomrule
 \end{tabularx}
 \end{center}
+
+Here, \emph{beta} refers to a measure of systematic sensitivity of an asset to a given factor or market. Formally, for returns $r^A_t$ and a factor $r^F_t$, the (linear) beta is defined by\[\beta = \frac{\mathrm{Cov}(r^A_t, r^F_t)}{\mathrm{Var}(r^F_t)},\]which corresponds to the slope coefficient in the regression\[r^A_t = \alpha + \beta r^F_t + \varepsilon_t.\]It captures how much, on average, the asset moves when the factor moves. In equity markets, ``general equity beta'' typically refers to exposure to the broad market index. In a cross-hedging context, estimating a beta amounts to finding a linear hedge ratio between ammonia returns and a proxy. The point made here is that before estimating such a linear sensitivity, one must first identify which interactions and regimes actually drive the dependence structure.
 
 The initial expectation is not that all candidates hedge ammonia. The expectation is that the energy candidates have the cleanest upstream channel, the agricultural candidates have a weaker downstream channel, and the equity candidates are too composite to be clean ammonia proxies.
 
@@ -738,40 +745,115 @@ The point is not that these two instruments are perfect. The point is that they 
 
 \subsection{Dynamic hedge design}
 
-A standard dynamic variance hedge would choose
+A dynamic hedge is a predictable vector $h_t \in \mathbb{R}^m$, chosen using the information available at date $t$. The hedged one-period ammonia return is
+\[
+Y_t - h_t^\top Z_t.
+\]
+The standard minimum-variance hedge chooses $h_t$ to minimize the conditional variance of this residual exposure:
 \[
 h_t^\star
 =
-\arg\min_{h}
-\E\!\left[
+\arg\min_{h \in \mathbb{R}^m}
+\mathbb{E}
+\left[
 \left(Y_t-h^\top Z_t\right)^2
-\,\middle|\,
+\mid
 \mathcal F_t
-\right].
+\right],
 \]
-In the rolling covariance case, this gives
+where $\mathcal F_t$ denotes the information available at date $t$, including past ammonia returns, past proxy returns, and the interaction diagnostics computed up to date $t$.
+
+The interpretation is simple: $h_t^\star$ is the vector of hedge ratios that makes the residual ammonia exposure as small as possible in conditional mean-square error. If the $i$-th component of $h_t^\star$ is positive, the corresponding proxy is used to offset positive ammonia moves; if it is close to zero, the proxy contributes little to the hedge at that date.
+
+In the rolling covariance implementation, define
+\[
+\widehat{\Sigma}_{ZZ,t}
+=
+\widehat{\mathrm{Var}}_t(Z_t),
+\qquad
+\widehat{\Sigma}_{ZY,t}
+=
+\widehat{\mathrm{Cov}}_t(Z_t,Y_t),
+\]
+where the estimates are computed on a rolling window ending at date $t$. The first-order condition of the quadratic minimization problem gives
+\[
+\widehat{\Sigma}_{ZZ,t} h_t
+=
+\widehat{\Sigma}_{ZY,t},
+\]
+and therefore
 \[
 h_t
 =
-\widehat\Sigma_{ZZ,t}^{-1}
-\widehat\Sigma_{ZY,t}.
+\widehat{\Sigma}_{ZZ,t}^{-1}
+\widehat{\Sigma}_{ZY,t},
 \]
-This object is useful, but it should not be used blindly. The interaction analysis says that the hedge should be conditioned on at least three facts:
+when $\widehat{\Sigma}_{ZZ,t}$ is invertible. This is the multivariate analogue of the usual hedge beta,
 \[
-\text{timing},
-\qquad
-\text{transmission strength},
-\qquad
-\text{stress interaction}.
+\beta_t
+=
+\frac{\widehat{\mathrm{Cov}}_t(Y_t,Z_t)}
+{\widehat{\mathrm{Var}}_t(Z_t)}.
 \]
 
-A more interaction-aware rule would keep the covariance hedge as a direction, but modulate its intensity using the interaction diagnostics:
+However, this covariance hedge should not be used mechanically. It only measures local linear co-movement. The interaction analysis shows that the retained proxies have different economic roles: $\mathrm{gas\_global}$ is mainly a cost-regime proxy, while $\mathrm{ttf\_m1}$ is mainly a short-horizon prospective signal. Therefore, the hedge should not only estimate a direction; it should also decide when that direction is reliable.
+
+A simple interaction-aware hedge can be written as
 \[
 h_t^{\mathrm{final}}
 =
-\omega_t\,g_t\,\widetilde h_t .
+\omega_t g_t \widetilde h_t.
 \]
-Here \(\widetilde h_t\) is a smoothed hedge direction, \(g_t\) is an activation term based on current transmission strength, and \(\omega_t\) is a stress or regime intensity. The exact implementation is secondary to the conceptual point: the hedge should be active when the proxy is currently connected to ammonia, not merely because the proxy is economically plausible.
+Here, $\widetilde h_t$ is a smoothed version of the rolling covariance hedge, $g_t$ is an activation term measuring current transmission strength, and $\omega_t$ is a regime or stress intensity.
+
+For example, one may define
+\[
+\widetilde h_t
+=
+(1-\lambda)\widetilde h_{t-1}
++
+\lambda h_t,
+\qquad
+0<\lambda<1,
+\]
+in order to reduce excessive turnover and avoid reacting too strongly to noisy covariance estimates. The activation term may be based on rolling prospective transmission:
+\[
+g_t
+=
+\mathbf 1_{\{L_t > \ell_0\}},
+\qquad
+L_t
+=
+\left[
+\mathrm{Corr}_{t-W:t}
+\left(
+r^A_{s+1}, r^X_s
+\right)
+\right]_+,
+\]
+or, more smoothly,
+\[
+g_t
+=
+\min\left\{1,\frac{L_t}{\ell_0}\right\}.
+\]
+Thus the hedge is active only when the proxy is currently transmitting information to ammonia.
+
+The stress intensity can be built from the two-axis regime diagnostic. If $\sigma^X_t$ denotes rolling proxy volatility and $L_t$ denotes rolling transmission strength, one may use
+\[
+\omega_t
+=
+1
++
+\gamma
+\mathbf 1_{\{\sigma^X_t > q_{0.75}(\sigma^X)\}}
+\mathbf 1_{\{L_t > q_{0.75}(L)\}},
+\qquad
+\gamma \ge 0.
+\]
+This increases hedge intensity precisely in the high-stress/high-transmission regime, where proxy stress is most likely to be transmitted to ammonia.
+
+The resulting rule keeps the covariance hedge as a baseline direction, but it prevents the hedge from being active merely because a proxy is economically plausible. The hedge is strengthened when the proxy is both statistically connected to ammonia and currently in a regime where this connection is transmitted.
 
 \subsection{Limitations}
 
