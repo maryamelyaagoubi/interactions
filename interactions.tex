@@ -816,7 +816,10 @@ For example, one may define
 \qquad
 0<\lambda<1,
 \]
-in order to reduce excessive turnover and avoid reacting too strongly to noisy covariance estimates. The activation term may be based on rolling prospective transmission:
+in order to reduce excessive turnover and avoid reacting too strongly to noisy covariance estimates. 
+A small $\lambda$ gives a more stable hedge and reduces turnover, but reacts slowly to changes in the covariance structure. A large $\lambda$ reacts faster, but is more exposed to estimation noise.
+
+The activation term may be based on rolling prospective transmission, where the threshold $\ell_0$ controls the activation of the hedge through the current transmission strength:
 \[
 g_t
 =
@@ -837,7 +840,8 @@ g_t
 =
 \min\left\{1,\frac{L_t}{\ell_0}\right\}.
 \]
-Thus the hedge is active only when the proxy is currently transmitting information to ammonia.
+Thus the hedge is active only when the proxy is currently transmitting information to ammonia. A high threshold makes the hedge more selective and avoids acting when the ammonia--proxy link is weak. A low threshold keeps the hedge active more often, but increases the risk of hedging on a weak or unstable relation.
+
 
 The stress intensity can be built from the two-axis regime diagnostic. If $\sigma^X_t$ denotes rolling proxy volatility and $L_t$ denotes rolling transmission strength, one may use
 \[
@@ -851,6 +855,8 @@ The stress intensity can be built from the two-axis regime diagnostic. If $\sigm
 \qquad
 \gamma \ge 0.
 \]
+Where the stress parameter $\gamma$ controls the amplification of the hedge in high-stress/high-transmission regimes. A larger $\gamma$ gives more protection when proxy stress is transmitted to ammonia, but also increases exposure to proxy-specific noise.
+
 This increases hedge intensity precisely in the high-stress/high-transmission regime, where proxy stress is most likely to be transmitted to ammonia.
 
 The resulting rule keeps the covariance hedge as a baseline direction, but it prevents the hedge from being active merely because a proxy is economically plausible. The hedge is strengthened when the proxy is both statistically connected to ammonia and currently in a regime where this connection is transmitted.
