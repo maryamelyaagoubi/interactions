@@ -15,8 +15,16 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
 
 \graphicspath{{plots/}{./}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{MidGray}{Projet Interactions}}
+\fancyhead[R]{\includegraphics[height=0.7cm]{logo_mva.png}}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\thepage}
 
 \definecolor{Ink}{HTML}{102330}
 \definecolor{Accent}{HTML}{1F6C8B}
@@ -45,6 +53,21 @@
   labelfont=bf,
   textfont=it,
   width=0.92\textwidth
+}
+
+% Centered abstract with title
+\renewenvironment{abstract}{%
+  \vspace{1.5em}
+  \begin{center}
+    {\large\bfseries\abstractname}
+  \end{center}
+  \vspace{0.8em}
+  \begin{center}
+    \begin{minipage}{0.82\textwidth}
+      \small
+}{%
+    \end{minipage}
+  \end{center}
 }
 
 \newcommand{\NH}{\mathrm{NH_3}}
@@ -103,23 +126,53 @@
 \end{figure}
 }
 
-\title{
-  \vspace{-1.0cm}
-  \textbf{Ammonia Cross-Hedging}
-}
-
-\author{
-  Ruben Cardoso \quad Maryam El Yaagoubi
-}
-
+% Title page data — not used with \maketitle, kept for hyperref metadata only
+\title{Ammonia Cross-Hedging}
+\author{Ruben Cardoso, Maryam El Yaagoubi}
 \date{\today}
 
 \begin{document}
 
 \selectlanguage{english}
 
-\maketitle
+% ── Custom title page ──────────────────────────────────────────────────────
+\begin{titlepage}
+\thispagestyle{fancy}
+\vspace*{2cm}
 
+\begin{center}
+
+% Top logo
+\includegraphics[height=2.2cm]{logo_mva.png}\par
+\vspace{1.8cm}
+
+% Title block
+{\fontsize{26}{32}\selectfont\bfseries\color{Ink} Ammonia Cross-Hedging}\par
+\vspace{0.4cm}
+{\large\color{MidGray} Interaction diagnostics for commodity proxy selection}\par
+
+\vspace{1.8cm}
+
+% Authors
+{\large
+\begin{tabular}{cc}
+  \textbf{Ruben Cardoso} & \textbf{Maryam El Yaagoubi} \\[4pt]
+  \small\texttt{ruben.cardoso@dauphine.eu} & \small\texttt{maryam.el-yaagoubi@enpc.fr}
+\end{tabular}
+}\par
+
+\vspace{2.2cm}
+
+% Course label
+{\color{MidGray}\itshape Projet Interactions : M2 MVA }\par
+\vspace{0.6cm}
+{\color{MidGray} 1\textsuperscript{er} mai 2026}\par
+
+\end{center}
+\end{titlepage}
+% ────────────────────────────────────────────────────────────────────────────
+
+\vspace{1.5em}
 \begin{abstract}
 Ammonia is often linked to natural gas through the cost of hydrogen production. That statement is correct, but incomplete. The traded ammonia price is a physical benchmark price shaped by feedstock costs, production technology, delivered logistics, regional balance, downstream fertilizer demand, and the marginal source required to clear a basin. This paper treats ammonia not as an isolated price series, but as the observable outcome of an interacting commodity system.
 
@@ -139,18 +192,14 @@ The practical problem is simple to state. An industrial buyer is exposed to ammo
 That temptation is economically justified. Conventional ammonia production requires hydrogen, and the dominant route outside coal-based systems uses natural gas both as feedstock and as energy input. But the conclusion does not follow mechanically. Ammonia is not a deterministic transformation of gas. It is a physical commodity whose price is formed through plants, ports, contracts, benchmarks, freight, regional balances, marginal producers, and downstream fertilizer arbitrages.
 
 
-The statistical question is therefore not merely
-\[
-\textbf{``Is ammonia correlated with gas?''}
-\]
-It is sharper:
-\[
+The statistical question is therefore:
+
+\begin{center}
 \textbf{``Which observable markets interact with ammonia, 
-
 at which horizon, in which states, and in which tail?''}
-\]
+\end{center}
 
-That distinction matters. A proxy can be economically natural and statistically weak. A market can explain ammonia contemporaneously without leading it. A volatile gas market can fail to transmit into ammonia. Conversely, a weak average correlation may hide a useful stress interaction in the upper tail. Cross-hedging begins only after those cases have been separated.
+A proxy can be economically natural and statistically weak. A market can explain ammonia contemporaneously without leading it. A volatile gas market can fail to transmit into ammonia. Conversely, a weak average correlation may hide a useful stress interaction in the upper tail. Cross-hedging begins only after those cases have been separated.
 
 The paper develops the following line of argument. First, interaction objects from the course are translated into commodity-market language. Second, the ammonia market is reduced to the structural facts that matter for proxy selection. Third, the interaction diagnostics are defined mathematically. Fourth, the empirical evidence is read through those diagnostics. The final section explains how the resulting interaction structure should constrain any later hedge design.
 
@@ -865,9 +914,7 @@ The resulting rule keeps the covariance hedge as a baseline direction, but it pr
 
 \subsection{Limitations}
 
-Three limitations are structural.
-
-First, ammonia prices are physical benchmark prices. They contain logistics, contract structure, regional basis and marginal-source effects that are not fully observed in financial time series.
+Ammonia prices are physical benchmark prices. They contain logistics, contract structure, regional basis and marginal-source effects that are not fully observed in financial time series.
 
 Second, tail diagnostics are sample-sensitive. A stress odds ratio is informative only if the number of joint tail observations is reported and interpreted cautiously.
 
@@ -882,6 +929,8 @@ The interaction diagnostics separate several ideas that are often collapsed into
 The empirical reading is clear. \texttt{gas\_global} is best interpreted as a cost-regime proxy. \texttt{ttf\_m1} is best interpreted as a short-horizon prospective signal. The agricultural and equity candidates are economically connected but empirically weaker or too composite for a clean ammonia proxy.
 
 Cross-hedging ammonia is therefore not first a beta-estimation problem. It is first an interaction-identification problem.
+
+\newpage
 
 \appendix
 
@@ -942,7 +991,7 @@ Cross-hedging ammonia is therefore not first a beta-estimation problem. It is fi
 \end{figure}
 
 
-\newpage
+\clearpage
 
 \begin{thebibliography}{9}
 
